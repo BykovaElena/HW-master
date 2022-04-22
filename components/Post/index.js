@@ -4,20 +4,25 @@ import { Timeline } from 'antd'
 //import { postData } from "../../posts";
 import "./style.css";
 import { ConsoleSqlOutlined, HeartTwoTone } from "@ant-design/icons";
+import api from "../../utils/Api";
 
 
 
 
 
-export const Post = ({ onPostLike, _id, title, likes, image, text, author: {name, email}, created_at, updated_at}) => {
+export const Post = ({ userDelete, onPostLike, _id, title, likes, image, text, author: {name, email}, created_at, updated_at}) => {
     const isLiked = likes.some(id => id === currentUser._id);
     const [count, setCount] = useState(0);
+
+    function handleDeleteClick(){
+        userDelete({_id})
+    }
 
     function handleLikeClick (){
         setCount(prevState => prevState+1);
         onPostLike({_id, likes})
     }
-
+    
     return (
        
         
@@ -40,7 +45,7 @@ export const Post = ({ onPostLike, _id, title, likes, image, text, author: {name
                 <button onClick={handleLikeClick}>{ count}
                     <HeartTwoTone twoToneColor="#eb2f96"  />
                 </button>
-                
+                <button onClick = {handleDeleteClick}>Удалить</button>
             </Card>
         </div>
         

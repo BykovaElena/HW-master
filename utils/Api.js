@@ -14,7 +14,7 @@ class Api {
             }
         }).then(onResponce)
     }
-    deleteUser() {
+    deleteUser(postId) {
         return fetch(`${this._baseUrl}/posts/${postId}`, {
             method: "DELETE",
             headers: {
