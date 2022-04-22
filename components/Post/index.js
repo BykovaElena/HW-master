@@ -45,7 +45,7 @@ export const Post = ({ userDelete, onPostLike, _id, title, likes, image, text, a
                 <button onClick={handleLikeClick}>{ count}
                     <HeartTwoTone twoToneColor="#eb2f96"  />
                 </button>
-                <button onClick = {handleDeleteClick}>Удалить</button>
+                <button className="btn_delete" onClick = {handleDeleteClick}>Удалить</button>
             </Card>
         </div>
         
