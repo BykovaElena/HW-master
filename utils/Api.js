@@ -14,6 +14,14 @@ class Api {
             }
         }).then(onResponce)
     }
+    deleteUser() {
+        return fetch(`${this._baseUrl}/posts/${postId}`, {
+            method: "DELETE",
+            headers: {
+                authorization: this._token,
+            }
+        }).then(onResponce)
+    }
     changeLikeStatust(postId, isLike) {
         return fetch(`${this._baseUrl}/posts/likes/${postId}`, {
             method: isLike ? "DELETE" : "PUT",
