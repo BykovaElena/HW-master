@@ -19,6 +19,7 @@ export const App = () => {
     const [posts, setPosts] = useState([]) 
     const [currentUser, setCurrentUser] = useState({})
     
+    
 
 useEffect (() => {
     
@@ -48,7 +49,9 @@ function handlePostLike ({_id, likes}) {
     return (
         <>
             <Layout>
-                <Header >Header</Header>
+                <Header >
+                    <button>Удалить</button>
+                </Header>
                 <Content>
                     <PostList  postData={posts} currentUser={currentUser} onPostLike={handlePostLike}/>
                     
